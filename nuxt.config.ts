@@ -31,7 +31,9 @@ const config: Configuration = {
    */
   plugins: [
     '~/plugins/axios',
-    ...(process.env.NODE_ENV !== 'production' ? ['~/plugins/faker', '~/plugins/mock'] : [])
+    ...(process.env.NODE_ENV !== 'production'
+      ? ['~/plugins/faker', '~/plugins/mock']
+      : [])
   ],
   /*
    ** Nuxt.js dev-modules
@@ -39,6 +41,7 @@ const config: Configuration = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    // Doc: https://typescript.nuxtjs.org/
     '@nuxt/typescript-build'
   ],
   /*
