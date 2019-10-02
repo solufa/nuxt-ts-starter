@@ -1,0 +1,46 @@
+{
+  "name": "nuxt-ts",
+  "version": "0.0.0",
+  "description": "My swell Nuxt.js project",
+  "author": "m-mitsuhide",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:client": "nuxt-ts",
+    "dev:mock": "axios-mock-server -w",
+    "generate": "nuxt-ts generate",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.1.7",
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.9.2",
+    "nuxt-property-decorator": "^2.4.0",
+    "vuex-class-component": "^2.0.4"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.2.10",
+    "@nuxtjs/eslint-config-typescript": "^0.1.3",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@types/faker": "^4.1.5",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "axios-mock-server": "^0.12.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "faker": "^4.1.0",
+    "husky": "^2.6.0",
+    "lint-staged": "^8.2.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
