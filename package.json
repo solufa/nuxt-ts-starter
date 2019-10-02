@@ -10,7 +10,8 @@
     "dev:mock": "axios-mock-server -w",
     "generate": "nuxt-ts generate",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint"
