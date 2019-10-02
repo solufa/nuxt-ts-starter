@@ -79,7 +79,6 @@ dist
 
 # IDE / Editor
 .idea
-.editorconfig
 
 # Service worker
 sw.*
@@ -90,4 +89,5 @@ sw.*
 # Vim swap files
 *.swp
 
+### Misc
 mocks/$route.ts
