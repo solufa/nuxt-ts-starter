@@ -36,7 +36,7 @@
     "@typescript-eslint/parser": "^2.3.2",
     "axios-mock-server": "^0.12.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
+    "eslint": "^6.5.1",
     "eslint-plugin-nuxt": ">=0.4.2",
     "faker": "^4.1.0",
     "husky": "^2.6.0",
