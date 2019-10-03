@@ -41,6 +41,8 @@ const config: Configuration = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
     // Doc: https://typescript.nuxtjs.org/
     '@nuxt/typescript-build'
   ],
@@ -70,7 +72,7 @@ const config: Configuration = {
           test: /\.(js|ts|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
-          options: { cache: true, fix: false }
+          options: { cache: true }
         })
       }
     }
