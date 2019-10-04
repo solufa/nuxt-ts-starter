@@ -72,7 +72,7 @@ const config: Configuration = {
           test: /\.(js|ts|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
-          options: { cache: true }
+          options: { cache: true, fix: true }
         })
       }
     }
