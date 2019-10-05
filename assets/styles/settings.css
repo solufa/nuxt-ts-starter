@@ -1,17 +1,1 @@
-/* stylelint-disable property-no-vendor-prefix */
-html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
-    Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-/* stylelint-enable property-no-vendor-prefix */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
+/* stylelint-disable no-empty-source */
