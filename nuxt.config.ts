@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import colors from 'vuetify/es5/util/colors'
 import { Configuration } from '@nuxt/types'
 
 const { ENABLE_MOCK, SUPPORT_IE } = process.env
@@ -53,6 +54,8 @@ const config: Configuration = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // Doc: https://github.com/nuxt-community/vuetify-module
+    '@nuxtjs/vuetify',
     // Doc: https://typescript.nuxtjs.org/
     ['@nuxt/typescript-build', { typeCheck: { eslint: true } }]
   ],
@@ -70,6 +73,27 @@ const config: Configuration = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: { baseURL: 'https://example.com/v1' },
+  /*
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    theme: {
+      dark: true,
+      themes: {
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        }
+      }
+    }
+  },
   /*
    ** Build configuration
    */
