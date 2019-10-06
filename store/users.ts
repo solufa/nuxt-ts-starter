@@ -66,6 +66,4 @@ export const store = new Vuex.Store({
   }
 })
 
-export const vxm = {
-  user: createProxy(store, UserStore)
-}
+export default createProxy(store, UserStore)
