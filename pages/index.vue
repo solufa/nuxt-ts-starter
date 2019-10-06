@@ -5,7 +5,9 @@
       <h1 class="title">
         nuxt-ts
       </h1>
-      <h2 class="subtitle">{{ vxm.user.fullname }}'s swell Nuxt.js project</h2>
+      <h2 class="subtitle">
+        {{ $vxm.users.fullname }}'s swell Nuxt.js project
+      </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -25,7 +27,6 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import Logo from '~/components/atoms/Logo.vue'
-import { vxm } from '~/store'
 
 @Component({
   components: { Logo }
@@ -36,12 +37,8 @@ export default class extends Vue {
     hoge: string
   }
 
-  get vxm() {
-    return vxm
-  }
-
   async mounted() {
-    await vxm.user.doAnotherAsyncStuff(4)
+    await this.$vxm.users.doAnotherAsyncStuff(4)
   }
 }
 </script>

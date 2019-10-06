@@ -90,4 +90,4 @@ sw.*
 *.swp
 
 ### Misc
-mocks/$route.ts
+mocks/$mock.ts
