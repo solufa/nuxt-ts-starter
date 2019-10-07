@@ -46,11 +46,20 @@ export default class extends Vue {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  /* Caution: `min-height: 100vh` does not work in IE 11 */
+  height: 100vh;
+  display: grid;
+
+  /* Caution: `1fr` has different results in IE 11 */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   text-align: center;
+}
+
+.container > div {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 .title {

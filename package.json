@@ -15,6 +15,10 @@
     "lint:fix": "npm run lint:script -- --fix && npm run lint:style -- --fix",
     "typecheck": "tsc --noEmit"
   },
+  "browserslist": [
+    "last 2 version",
+    "IE 11"
+  ],
   "lint-staged": {
     "*.{js,ts,vue}": "eslint",
     "*.{css,vue}": "stylelint"
@@ -48,7 +52,7 @@
     "@nuxtjs/eslint-module": "^1.1.0",
     "@nuxtjs/stylelint-module": "^3.0.0",
     "@types/faker": "^4.1.6",
-    "axios-mock-server": "^0.13.0",
+    "axios-mock-server": "^0.13.1",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
