@@ -16,7 +16,8 @@ const config: Configuration = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ src: 'https://polyfill.io/v3/polyfill.min.js?features=es6' }]
   },
   /*
    ** Customize the progress-bar color
@@ -63,6 +64,16 @@ const config: Configuration = {
    ** Build configuration
    */
   build: {
+    /*
+     ** Customize PostCSS Loader plugins
+     */
+    postcss: {
+      preset: {
+        autoprefixer: {
+          grid: true
+        }
+      }
+    },
     /*
      ** You can extend webpack config here
      */
