@@ -7,8 +7,10 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:client": "nuxt-ts",
+    "dev:api": "aspida --watch",
     "dev:mock": "axios-mock-server --watch",
-    "generate": "nuxt-ts generate",
+    "generate": "npm run build:api && nuxt-ts generate",
+    "build:api": "aspida --build",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint \"assets/**/*.css\" \"{components,layouts,pages}/**/*.vue\"",
@@ -42,6 +44,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.2.0",
     "@nuxtjs/axios": "^5.6.0",
+    "aspida": "^0.1.1",
     "nuxt": "^2.10.0",
     "nuxt-property-decorator": "^2.4.0",
     "vuex-class-component": "^2.0.4"

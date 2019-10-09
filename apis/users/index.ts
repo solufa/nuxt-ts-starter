@@ -9,10 +9,20 @@ export const users = [...Array(5)].map((_, id) => ({
 
 export type Users = typeof users
 
+export interface Methods {
+  get: {
+    response: Users
+  }
+
+  post: {
+    data: Omit<Users[0], 'id'>
+  }
+}
+
 const methods: MockMethods = {
   get: () => [200, users],
 
-  post: ({ data }: { data: Users[0] }) => {
+  post: ({ data }: { data: Methods['post']['data'] }) => {
     users.push({
       id: users.length,
       firstname: data.firstname,

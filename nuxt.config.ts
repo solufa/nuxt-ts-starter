@@ -26,13 +26,14 @@ const config: Configuration = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/styles/settings.css'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     '~/plugins/axios',
     '~/plugins/vxm',
+    '~/plugins/aspida',
     ...(process.env.NODE_ENV !== 'production'
       ? ['~/plugins/faker', '~/plugins/mock']
       : [])
