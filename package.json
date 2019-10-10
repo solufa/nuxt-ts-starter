@@ -44,7 +44,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.2.0",
     "@nuxtjs/axios": "^5.6.0",
-    "aspida": "^0.1.1",
+    "aspida": "^0.2.0",
     "nuxt": "^2.10.0",
     "nuxt-property-decorator": "^2.4.0",
     "vuex-class-component": "^2.0.4"
@@ -55,7 +55,7 @@
     "@nuxtjs/eslint-module": "^1.1.0",
     "@nuxtjs/stylelint-module": "^3.0.0",
     "@types/faker": "^4.1.6",
-    "axios-mock-server": "^0.13.1",
+    "axios-mock-server": "^0.13.2",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
