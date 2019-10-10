@@ -6,7 +6,6 @@ import {
   extractVuexModule,
   createProxy
 } from 'vuex-class-component'
-import { Users } from '~/mocks/users'
 
 const VuexModule = createModule({
   namespaced: true,
@@ -35,7 +34,7 @@ export class UserStore extends VuexModule {
   }
 
   @action doSomethingAsync() {
-    return $nuxt.$axios.$get<Users>('/users')
+    return $nuxt.$api.users.$get()
   }
 
   @action async doAnotherAsyncStuff(payload: number) {
@@ -66,6 +65,4 @@ export const store = new Vuex.Store({
   }
 })
 
-export const vxm = {
-  user: createProxy(store, UserStore)
-}
+export default createProxy(store, UserStore)

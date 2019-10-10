@@ -16,7 +16,8 @@ const config: Configuration = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ src: 'https://polyfill.io/v3/polyfill.min.js?features=es6' }]
   },
   /*
    ** Customize the progress-bar color
@@ -25,13 +26,17 @@ const config: Configuration = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/styles/settings.css'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     '~/plugins/axios',
-    ...(process.env.NODE_ENV !== 'production' ? ['~/plugins/faker', '~/plugins/mock'] : [])
+    '~/plugins/vxm',
+    '~/plugins/api',
+    ...(process.env.NODE_ENV !== 'production'
+      ? ['~/plugins/faker', '~/plugins/mock']
+      : [])
   ],
   /*
    ** Nuxt.js dev-modules
@@ -39,6 +44,9 @@ const config: Configuration = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
+    // Doc: https://typescript.nuxtjs.org/
     '@nuxt/typescript-build'
   ],
   /*
@@ -58,6 +66,16 @@ const config: Configuration = {
    */
   build: {
     /*
+     ** Customize PostCSS Loader plugins
+     */
+    postcss: {
+      preset: {
+        autoprefixer: {
+          grid: true
+        }
+      }
+    },
+    /*
      ** You can extend webpack config here
      */
     extend(config, ctx) {
@@ -67,7 +85,7 @@ const config: Configuration = {
           test: /\.(js|ts|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
-          options: { cache: true, fix: false }
+          options: { cache: true, fix: true }
         })
       }
     }
