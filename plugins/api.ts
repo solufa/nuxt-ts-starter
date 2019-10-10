@@ -4,10 +4,10 @@ import api, { ApiInstance } from '~/apis/$api'
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $aspida: ApiInstance
+    $api: ApiInstance
   }
 }
 
-const plugin: Plugin = ({ $axios }, inject) => inject('aspida', api($axios))
+const plugin: Plugin = ({ $axios }, inject) => inject('api', api($axios))
 
 export default plugin
