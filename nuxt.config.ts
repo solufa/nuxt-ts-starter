@@ -33,7 +33,7 @@ const config: Configuration = {
   plugins: [
     '~/plugins/axios',
     '~/plugins/vxm',
-    '~/plugins/aspida',
+    '~/plugins/api',
     ...(process.env.NODE_ENV !== 'production'
       ? ['~/plugins/faker', '~/plugins/mock']
       : [])

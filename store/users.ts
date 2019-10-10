@@ -34,7 +34,7 @@ export class UserStore extends VuexModule {
   }
 
   @action doSomethingAsync() {
-    return $nuxt.$aspida.users.$get()
+    return $nuxt.$api.users.$get()
   }
 
   @action async doAnotherAsyncStuff(payload: number) {
