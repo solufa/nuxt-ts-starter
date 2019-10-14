@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { Configuration } from '@nuxt/types'
 
 const config: Configuration = {
@@ -55,6 +56,8 @@ const config: Configuration = {
    ** Nuxt.js modules
    */
   modules: [
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
