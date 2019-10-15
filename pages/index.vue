@@ -63,9 +63,6 @@ export default class extends Vue {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
   font-weight: 300;
   font-size: 100px;
   color: #35495e;
@@ -82,5 +79,34 @@ export default class extends Vue {
 
 .links {
   padding-top: 15px;
+}
+
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
 }
 </style>
