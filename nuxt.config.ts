@@ -25,7 +25,8 @@ const config: Configuration = {
       ? {
           script: [
             {
-              src: 'https://polyfill.io/v3/polyfill.min.js?features=EventSource'
+              src:
+                'https://polyfill.io/v3/polyfill.min.js?features=default%2CIntersectionObserver%2CEventSource%2CMath.cbrt%2CObject.values'
             }
           ]
         }
