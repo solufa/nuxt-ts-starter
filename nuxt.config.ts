@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import { Configuration } from '@nuxt/types'
 
+const { ENABLE_MOCK, SUPPORT_IE } = process.env
+
 const config: Configuration = {
   mode: 'spa',
   /*
@@ -18,9 +20,15 @@ const config: Configuration = {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      { src: 'https://polyfill.io/v3/polyfill.min.js?features=EventSource' }
-    ]
+    ...(SUPPORT_IE === 'true'
+      ? {
+          script: [
+            {
+              src: 'https://polyfill.io/v3/polyfill.min.js?features=EventSource'
+            }
+          ]
+        }
+      : {})
   },
   /*
    ** Customize the progress-bar color
@@ -37,9 +45,7 @@ const config: Configuration = {
     '~/plugins/axios',
     '~/plugins/vxm',
     '~/plugins/api',
-    ...(process.env.NODE_ENV !== 'production'
-      ? ['~/plugins/faker', '~/plugins/mock']
-      : [])
+    ...(ENABLE_MOCK === 'true' ? ['~/plugins/faker', '~/plugins/mock'] : [])
   ],
   /*
    ** Nuxt.js dev-modules
