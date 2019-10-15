@@ -84,6 +84,11 @@ export default class extends Vue {
       icon: 'mdi-chart-bubble',
       title: 'Inspire',
       to: '/inspire'
+    },
+    {
+      icon: 'mdi-arrow-collapse-down',
+      title: 'Sample lazy loading',
+      to: '/sample-lazy-loading'
     }
   ]
   miniVariant = false
