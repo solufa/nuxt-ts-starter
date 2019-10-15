@@ -17,10 +17,6 @@
     "lint:fix": "npm run lint:script -- --fix && npm run lint:style -- --fix",
     "typecheck": "tsc --noEmit"
   },
-  "browserslist": [
-    "last 2 version",
-    "IE 11"
-  ],
   "lint-staged": {
     "*.{js,ts,vue}": "eslint",
     "*.{css,vue}": "stylelint"
