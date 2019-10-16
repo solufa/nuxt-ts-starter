@@ -81,9 +81,7 @@ const config: Configuration = {
      */
     postcss: {
       preset: {
-        autoprefixer: {
-          grid: true
-        }
+        autoprefixer: SUPPORT_IE === 'true' ? { grid: true } : {}
       }
     },
     /*
