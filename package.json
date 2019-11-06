@@ -52,7 +52,7 @@
     "@nuxtjs/stylelint-module": "^3.0.1",
     "@types/faker": "^4.1.7",
     "aspida": "^0.6.2",
-    "axios-mock-server": "^0.16.2",
+    "axios-mock-server": "^0.16.3",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.5.0",
