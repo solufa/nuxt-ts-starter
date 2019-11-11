@@ -43,7 +43,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "nuxt": "^2.10.2",
     "nuxt-property-decorator": "^2.5.0",
-    "vuex-class-component": "^2.0.4"
+    "vuex-class-component": "^2.1.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.4",
