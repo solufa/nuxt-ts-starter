@@ -1,4 +1,3 @@
-import '@nuxtjs/axios'
 import { NuxtApp } from '@nuxt/types/app'
 
 declare global {
