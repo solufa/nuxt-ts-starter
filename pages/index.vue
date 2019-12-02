@@ -46,16 +46,16 @@ export default class extends Vue {
 <style scoped>
 /* autoprefixer grid: no-autoplace */
 .container {
-  margin: 0 auto;
+  display: grid;
 
   /* Caution: `min-height: 100vh` does not work in IE 11 */
   height: 100vh;
-  display: grid;
+  margin: 0 auto;
+  text-align: center;
 
   /* Caution: `1fr` has different results in IE 11 */
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  text-align: center;
 }
 
 .container > div {
@@ -64,18 +64,18 @@ export default class extends Vue {
 }
 
 .title {
-  font-weight: 300;
   font-size: 100px;
+  font-weight: 300;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
+  padding-bottom: 15px;
   font-size: 42px;
+  font-weight: 300;
   color: #526488;
   word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {
@@ -84,11 +84,11 @@ export default class extends Vue {
 
 .button--green {
   display: inline-block;
-  border-radius: 4px;
-  border: 1px solid;
+  padding: 10px 30px;
   color: #3b8070;
   text-decoration: none;
-  padding: 10px 30px;
+  border: 1px solid;
+  border-radius: 4px;
 }
 
 .button--green:hover {
@@ -98,12 +98,12 @@ export default class extends Vue {
 
 .button--grey {
   display: inline-block;
-  border-radius: 4px;
-  border: 1px solid;
-  color: #35495e;
-  text-decoration: none;
   padding: 10px 30px;
   margin-left: 15px;
+  color: #35495e;
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 4px;
 }
 
 .button--grey:hover {
