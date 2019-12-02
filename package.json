@@ -17,6 +17,29 @@
     "lint:fix": "npm run lint:script -- --fix && npm run lint:style -- --fix",
     "typecheck": "tsc --noEmit"
   },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "@nuxtjs/eslint-config-typescript",
+      "plugin:nuxt/recommended",
+      "plugin:prettier/recommended",
+      "prettier",
+      "prettier/@typescript-eslint",
+      "prettier/standard",
+      "prettier/unicorn",
+      "prettier/vue"
+    ],
+    "globals": {
+      "$nuxt": "readonly"
+    },
+    "rules": {
+      "no-unused-vars": "off"
+    }
+  },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint",
     "*.{css,vue}": "stylelint"
