@@ -8,7 +8,7 @@ import {
 } from 'vuex-class-component'
 
 const VuexModule = createModule({
-  namespaced: true,
+  namespaced: 'users',
   target: 'nuxt'
 })
 

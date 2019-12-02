@@ -81,7 +81,8 @@ const config: Configuration = {
      */
     postcss: {
       preset: {
-        autoprefixer: SUPPORT_IE === 'true' ? { grid: true } : {}
+        // Caution: https://github.com/postcss/autoprefixer#beware-of-enabling-autoplacement-in-old-projects
+        autoprefixer: SUPPORT_IE === 'true' ? { grid: 'autoplace' } : {}
       }
     },
     /*
