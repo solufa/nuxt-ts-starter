@@ -13,7 +13,7 @@
     "build:api": "aspida --build",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "lint:style": "stylelint \"assets/**/*.css\" \"{components,layouts,pages}/**/*.vue\"",
+    "lint:style": "stylelint \"**/*.{*(s)css,vue}\"",
     "lint:fix": "npm run lint:script -- --fix && npm run lint:style -- --fix",
     "typecheck": "tsc --noEmit"
   },
@@ -56,7 +56,7 @@
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-standard",
+      "stylelint-config-twbs-bootstrap/scss",
       "stylelint-config-prettier"
     ]
   },
@@ -87,6 +87,6 @@
     "prettier": "^1.19.1",
     "stylelint": "^12.0.0",
     "stylelint-config-prettier": "^7.0.0",
-    "stylelint-config-standard": "^19.0.0"
+    "stylelint-config-twbs-bootstrap": "^1.0.0"
   }
 }
