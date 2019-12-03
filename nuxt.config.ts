@@ -51,12 +51,10 @@ const config: Configuration = {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://typescript.nuxtjs.org/
-    '@nuxt/typescript-build'
+    ['@nuxt/typescript-build', { typeCheck: { eslint: true } }]
   ],
   /*
    ** Nuxt.js modules
@@ -84,21 +82,11 @@ const config: Configuration = {
         // Caution: https://github.com/postcss/autoprefixer#beware-of-enabling-autoplacement-in-old-projects
         autoprefixer: SUPPORT_IE === 'true' ? { grid: 'autoplace' } : {}
       }
-    },
+    }
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module!.rules.push({
-          enforce: 'pre',
-          test: /\.(js|ts|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: { cache: true, fix: true }
-        })
-      }
-    }
+    // extend(config, ctx) {},
   }
 }
 
