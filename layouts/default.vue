@@ -91,6 +91,7 @@ export default class extends Vue {
       to: '/sample-lazy-loading'
     }
   ]
+
   miniVariant = false
   right = true
   rightDrawer = false
