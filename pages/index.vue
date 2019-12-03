@@ -44,6 +44,7 @@ export default class extends Vue {
 </script>
 
 <style scoped>
+/* autoprefixer grid: no-autoplace */
 .container {
   margin: 0 auto;
 
