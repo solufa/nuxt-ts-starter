@@ -76,7 +76,7 @@
     "aspida": "^0.7.0",
     "axios-mock-server": "^0.16.3",
     "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-nuxt": ">=0.5.0",
     "eslint-plugin-prettier": "^3.1.2",
     "faker": "^4.1.0",
