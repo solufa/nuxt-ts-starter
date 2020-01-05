@@ -2,6 +2,21 @@
 
 > My swell Nuxt.js project
 
+## Develop
+
+`.env`
+
+```
+ENABLE_MOCK=true
+SUPPORT_IE=false
+```
+
+``` bash
+$ npm install
+
+$ npm run dev
+```
+
 ## Build Setup
 
 ``` bash
