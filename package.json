@@ -74,7 +74,7 @@
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.1.1",
     "@types/faker": "^4.1.8",
-    "aspida": "^0.7.0",
+    "aspida": "^0.8.0",
     "axios-mock-server": "^0.16.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
