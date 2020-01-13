@@ -1,7 +1,13 @@
 import 'dotenv/config'
 import { Configuration } from '@nuxt/types'
 
-const { ENABLE_MOCK, SUPPORT_IE } = process.env
+const {
+  npm_package_name: TITLE,
+  npm_package_description: DESCRIPTION,
+  ENABLE_MOCK,
+  SUPPORT_IE,
+  BASE_URL
+} = process.env
 
 const config: Configuration = {
   mode: 'spa',
@@ -9,15 +15,11 @@ const config: Configuration = {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: TITLE || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+      { hid: 'description', name: 'description', content: DESCRIPTION || '' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ...(SUPPORT_IE === 'true'
@@ -45,7 +47,7 @@ const config: Configuration = {
     '~/plugins/axios',
     '~/plugins/vxm',
     '~/plugins/api',
-    ...(ENABLE_MOCK === 'true' ? ['~/plugins/faker', '~/plugins/mock'] : [])
+    ...(ENABLE_MOCK === 'true' ? ['~/plugins/mock'] : [])
   ],
   /*
    ** Nuxt.js dev-modules
@@ -69,7 +71,7 @@ const config: Configuration = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: { baseURL: 'https://example.com/v1' },
+  axios: { baseURL: BASE_URL },
   /*
    ** Build configuration
    */

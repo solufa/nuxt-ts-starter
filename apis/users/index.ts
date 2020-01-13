@@ -1,11 +1,10 @@
 import { MockMethods } from 'axios-mock-server'
-import faker from 'faker'
 
-export const users = [...Array(5)].map((_, id) => ({
-  id,
-  firstname: faker.name.firstName(),
-  lastname: faker.name.lastName()
-}))
+export const users = [
+  { firstname: 'Franklin', lastname: 'Potter' },
+  { firstname: 'Hamaad', lastname: 'Collins' },
+  { firstname: 'Morris', lastname: 'Dejesus' }
+].map((user, id) => ({ id, ...user }))
 
 export type Users = typeof users
 

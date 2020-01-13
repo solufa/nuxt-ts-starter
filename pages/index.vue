@@ -38,7 +38,7 @@ export default class extends Vue {
   }
 
   async mounted() {
-    await this.$vxm.users.doAnotherAsyncStuff(4)
+    await this.$vxm.users.doAnotherAsyncStuff(0)
   }
 }
 </script>
