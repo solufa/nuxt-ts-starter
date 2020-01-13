@@ -63,7 +63,7 @@
   "dependencies": {
     "@aspida/axios": "^0.1.1",
     "@nuxt/typescript-runtime": "^0.3.6",
-    "@nuxtjs/axios": "^5.9.2",
+    "@nuxtjs/axios": "^5.9.3",
     "nuxt": "^2.11.0",
     "nuxt-property-decorator": "^2.5.0",
     "vuex-class-component": "^2.2.1"
