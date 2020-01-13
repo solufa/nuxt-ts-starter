@@ -61,6 +61,7 @@
     ]
   },
   "dependencies": {
+    "@aspida/axios": "^0.1.1",
     "@nuxt/typescript-runtime": "^0.3.6",
     "@nuxtjs/axios": "^5.9.2",
     "@nuxtjs/dotenv": "^1.4.1",
@@ -74,7 +75,6 @@
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.1.1",
     "@types/faker": "^4.1.8",
-    "aspida": "^0.7.0",
     "axios-mock-server": "^0.16.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",

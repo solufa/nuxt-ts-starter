@@ -11,18 +11,18 @@ export type Users = typeof users
 
 export interface Methods {
   get: {
-    response: Users
+    resData: Users
   }
 
   post: {
-    data: Omit<Users[0], 'id'>
+    reqData: Omit<Users[0], 'id'>
   }
 }
 
 const methods: MockMethods = {
   get: () => [200, users],
 
-  post: ({ data }: { data: Methods['post']['data'] }) => {
+  post: ({ data }: { data: Methods['post']['reqData'] }) => {
     users.push({
       id: users.length,
       firstname: data.firstname,

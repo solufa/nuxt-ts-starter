@@ -7,7 +7,7 @@ const methods: MockMethods = {
 
 export interface Methods {
   get: {
-    response: Users
+    resData: Users
   }
 }
 

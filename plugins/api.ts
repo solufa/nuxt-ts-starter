@@ -1,4 +1,5 @@
 import { Plugin } from '@nuxt/types'
+import aspida from '@aspida/axios'
 // @ts-ignore: Cannot find module '~/apis/$api'
 import api, { ApiInstance } from '~/apis/$api'
 
@@ -8,6 +9,7 @@ declare module 'vue/types/vue' {
   }
 }
 
-const plugin: Plugin = ({ $axios }, inject) => inject('api', api($axios))
+const plugin: Plugin = ({ $axios }, inject) =>
+  inject('api', api(aspida($axios)))
 
 export default plugin
