@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "@aspida/axios": "^0.1.1",
+    "@aspida/axios": "^0.2.0",
     "@nuxt/typescript-runtime": "^0.3.6",
     "@nuxtjs/axios": "^5.9.2",
     "nuxt": "^2.11.0",
