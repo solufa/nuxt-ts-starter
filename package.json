@@ -8,7 +8,7 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:client": "nuxt-ts",
     "dev:api": "aspida --watch",
-    "dev:mock": "axios-mock-server --watch",
+    "dev:mock": "aspida-mock --watch",
     "generate": "npm run build:api && nuxt-ts generate",
     "build:api": "aspida --build",
     "lint": "npm run lint:script && npm run lint:style",
@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "@aspida/axios": "^0.1.1",
+    "@aspida/axios": "^0.2.3",
     "@nuxt/typescript-runtime": "^0.3.8",
     "@nuxtjs/axios": "^5.9.3",
     "nuxt": "^2.11.0",
@@ -74,7 +74,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.2.1",
-    "axios-mock-server": "^0.16.3",
+    "aspida-mock": "^0.1.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-nuxt": ">=0.5.0",

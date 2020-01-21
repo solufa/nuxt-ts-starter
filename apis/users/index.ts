@@ -1,4 +1,4 @@
-import { MockMethods } from 'axios-mock-server'
+import { mockMethods } from 'aspida-mock'
 
 export const users = [
   { firstname: 'Franklin', lastname: 'Potter' },
@@ -6,30 +6,28 @@ export const users = [
   { firstname: 'Morris', lastname: 'Dejesus' }
 ].map((user, id) => ({ id, ...user }))
 
-export type Users = typeof users
+export type User = typeof users[0]
 
 export interface Methods {
   get: {
-    resData: Users
+    resData: User[]
   }
 
   post: {
-    reqData: Omit<Users[0], 'id'>
+    reqData: Omit<User, 'id'>
   }
 }
 
-const methods: MockMethods = {
-  get: () => [200, users],
+export default mockMethods<Methods>({
+  get: () => ({ status: 200, resData: users }),
 
-  post: ({ data }: { data: Methods['post']['reqData'] }) => {
+  post: ({ reqData }) => {
     users.push({
       id: users.length,
-      firstname: data.firstname,
-      lastname: data.lastname
+      firstname: reqData.firstname,
+      lastname: reqData.lastname
     })
 
-    return [201]
+    return { status: 201 }
   }
-}
-
-export default methods
+})

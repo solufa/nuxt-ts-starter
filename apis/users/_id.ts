@@ -1,14 +1,15 @@
-import { MockMethods } from 'axios-mock-server'
-import { users, Users } from './index'
-
-const methods: MockMethods = {
-  get: ({ values }) => [200, users.find((user) => user.id === values.id)]
-}
+import { mockMethods } from 'aspida-mock'
+import { users, User } from './index'
 
 export interface Methods {
   get: {
-    resData: Users
+    resData: User
   }
 }
 
-export default methods
+export default mockMethods<Methods>({
+  get: ({ values }) => ({
+    status: 200,
+    resData: users.filter((user) => user.id === values.id)[0]
+  })
+})

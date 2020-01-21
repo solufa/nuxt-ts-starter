@@ -46,8 +46,7 @@ const config: Configuration = {
   plugins: [
     '~/plugins/axios',
     '~/plugins/vxm',
-    '~/plugins/api',
-    ...(ENABLE_MOCK === 'true' ? ['~/plugins/mock'] : [])
+    ENABLE_MOCK === 'true' ? '~/plugins/mock' : '~/plugins/api'
   ],
   /*
    ** Nuxt.js dev-modules
