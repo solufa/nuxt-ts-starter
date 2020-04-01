@@ -10,22 +10,22 @@ export type User = typeof users[0]
 
 export interface Methods {
   get: {
-    resData: User[]
+    resBody: User[]
   }
 
   post: {
-    reqData: Omit<User, 'id'>
+    reqBody: Omit<User, 'id'>
   }
 }
 
 export default mockMethods<Methods>({
-  get: () => ({ status: 200, resData: users }),
+  get: () => ({ status: 200, resBody: users }),
 
-  post: ({ reqData }) => {
+  post: ({ reqBody }) => {
     users.push({
       id: users.length,
-      firstname: reqData.firstname,
-      lastname: reqData.lastname
+      firstname: reqBody.firstname,
+      lastname: reqBody.lastname
     })
 
     return { status: 201 }

@@ -5,17 +5,18 @@
   "author": "m-mitsuhide",
   "private": true,
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "run-p dev:*",
     "dev:client": "nuxt-ts",
     "dev:api": "aspida --watch",
     "dev:mock": "aspida-mock --watch",
     "generate": "npm run build:api && nuxt-ts generate",
     "build:api": "aspida --build",
+    "build:mock": "aspida-mock --build",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{*(s)css,vue}\"",
     "lint:fix": "npm run lint:script -- --fix && npm run lint:style -- --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "run-p build:* && tsc --noEmit"
   },
   "eslintConfig": {
     "root": true,
@@ -61,7 +62,7 @@
     ]
   },
   "dependencies": {
-    "@aspida/axios": "^0.2.3",
+    "@aspida/axios": "^0.4.5",
     "@nuxt/typescript-runtime": "^0.4.1",
     "@nuxtjs/axios": "^5.9.5",
     "nuxt": "^2.12.2",
@@ -74,7 +75,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^1.0.2",
     "@nuxtjs/stylelint-module": "^3.2.2",
-    "aspida-mock": "^0.1.1",
+    "aspida-mock": "^0.4.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-nuxt": ">=0.5.2",
