@@ -1,4 +1,4 @@
-import { Plugin } from '@nuxt/types'
+import type { Plugin } from '@nuxt/types'
 import mockClient from '@aspida/axios/dist/mockClient'
 import mock from '~/apis/$mock'
 

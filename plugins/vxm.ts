@@ -1,4 +1,4 @@
-import { Plugin } from '@nuxt/types'
+import type { Plugin } from '@nuxt/types'
 import UsersProxy from '~/store/users'
 
 const vxm = {
