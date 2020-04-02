@@ -9,7 +9,7 @@
     "dev:client": "nuxt-ts",
     "dev:api": "aspida --watch",
     "dev:mock": "aspida-mock --watch",
-    "generate": "npm run build:api && nuxt-ts generate",
+    "generate": "run-p build:* && nuxt-ts generate",
     "build:api": "aspida --build",
     "build:mock": "aspida-mock --build",
     "lint": "npm run lint:script && npm run lint:style",
