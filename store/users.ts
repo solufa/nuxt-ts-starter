@@ -13,13 +13,13 @@ const VuexModule = createModule({
 })
 
 export class UserStore extends VuexModule {
-  private firstname = 'Michael'
-  private lastname = 'Olofinjana'
+  #firstname = 'Michael'
+  #lastname = 'Olofinjana'
   specialty = 'JavaScript'
 
   @mutation clearName() {
-    this.firstname = ''
-    this.lastname = ''
+    this.#firstname = ''
+    this.#lastname = ''
   }
 
   @mutation changeName({
@@ -29,8 +29,8 @@ export class UserStore extends VuexModule {
     firstname: string
     lastname: string
   }) {
-    this.firstname = firstname
-    this.lastname = lastname
+    this.#firstname = firstname
+    this.#lastname = lastname
   }
 
   @action doSomethingAsync() {
@@ -45,13 +45,13 @@ export class UserStore extends VuexModule {
   }
 
   get fullname() {
-    return this.lastname + ' ' + this.firstname
+    return `${this.#lastname} ${this.#firstname}`
   }
 
   set fullname(name: string) {
     const names = name.split(' ')
-    this.firstname = names[0]
-    this.lastname = names[1]
+    this.#firstname = names[0]
+    this.#lastname = names[1]
   }
 
   get bio() {

@@ -38,7 +38,7 @@
       "$nuxt": "readonly"
     },
     "rules": {
-      "no-unused-vars": "off"
+      "prefer-template": "error"
     }
   },
   "lint-staged": {
