@@ -67,8 +67,7 @@
     "@nuxt/typescript-runtime": "^0.4.5",
     "@nuxtjs/axios": "^5.9.7",
     "nuxt": "^2.12.2",
-    "nuxt-property-decorator": "^2.7.2",
-    "vuex-class-component": "^2.2.1"
+    "nuxt-property-decorator": "^2.7.2"
   },
   "devDependencies": {
     "@nuxt/types": "^0.7.4",

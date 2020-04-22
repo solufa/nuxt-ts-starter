@@ -1,8 +1,9 @@
 import type { Plugin } from '@nuxt/types'
-import UsersProxy from '~/store/users'
+import { getModule } from 'vuex-module-decorators'
+import { UsersStore } from '~/store/users'
 
 const vxm = {
-  users: UsersProxy
+  users: getModule(UsersStore)
 }
 
 declare module 'vue/types/vue' {
