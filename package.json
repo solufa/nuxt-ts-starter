@@ -63,7 +63,7 @@
     ]
   },
   "dependencies": {
-    "@aspida/axios": "^0.5.2",
+    "@aspida/axios": "^0.5.3",
     "@nuxt/typescript-runtime": "^0.4.6",
     "@nuxtjs/axios": "^5.10.3",
     "nuxt": "^2.12.2",
@@ -75,7 +75,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
-    "aspida-mock": "^0.5.1",
+    "aspida-mock": "^0.5.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
@@ -87,6 +87,6 @@
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-twbs-bootstrap": "^2.0.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.2"
   }
 }
