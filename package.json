@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "^0.7.7",
-    "@nuxt/typescript-build": "^1.0.1",
+    "@nuxt/typescript-build": "^1.0.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
