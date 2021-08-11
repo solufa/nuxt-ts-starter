@@ -8,6 +8,7 @@ const {
 } = process.env
 
 const config: NuxtConfig = {
+  telemetry: false,
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -41,11 +42,20 @@ const config: NuxtConfig = {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    'nuxt-vite',
+    '@nuxtjs/composition-api/module',
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
   ],
+
+  vite: {
+    vue: {
+      jsx: true,
+      jsxOptions: { compositionAPI: true }
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

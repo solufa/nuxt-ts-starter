@@ -1,5 +1,12 @@
 {
   "eslint.run": "onSave",
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
-  "vetur.experimental.templateInterpolationService": true
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "vetur.experimental.templateInterpolationService": true,
+  "files.eol": "\n",
+  "editor.tabSize": 2
 }
