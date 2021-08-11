@@ -1,8 +1,8 @@
 import type { Plugin } from '@nuxt/types'
-import mockClient from '@aspida/axios/dist/mockClient'
-import mock from '~/apis/$mock'
+import client from '@aspida/fetch'
+import mock from '~/api/$mock'
 
-const plugin: Plugin = ({ $axios }, inject) =>
-  inject('api', mock(mockClient($axios), { log: true }))
+const plugin: Plugin = (_, inject) =>
+  inject('api', mock(client(), { log: true }))
 
 export default plugin

@@ -1,6 +1,6 @@
 import type { Plugin } from '@nuxt/types'
-import aspida from '@aspida/axios'
-import api, { ApiInstance } from '~/apis/$api'
+import client from '@aspida/fetch'
+import api, { ApiInstance } from '~/api/$api'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -8,7 +8,7 @@ declare module 'vue/types/vue' {
   }
 }
 
-const plugin: Plugin = ({ $axios }, inject) =>
-  inject('api', api(aspida($axios)))
+const plugin: Plugin = (_, inject) =>
+  inject('api', api(client()))
 
 export default plugin

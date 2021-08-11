@@ -1,93 +1,60 @@
 import 'dotenv/config'
-import { Configuration } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types'
 
 const {
   npm_package_name: TITLE,
   npm_package_description: DESCRIPTION,
-  ENABLE_MOCK,
-  SUPPORT_IE,
-  BASE_URL
+  ENABLE_MOCK
 } = process.env
 
-const config: Configuration = {
-  mode: 'spa',
-  /*
-   ** Headers of the page
-   */
+const config: NuxtConfig = {
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  ssr: false,
+
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: TITLE || '',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: DESCRIPTION || '' }
+      { hid: 'description', name: 'description', content: DESCRIPTION || '' },
+      { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    ...(SUPPORT_IE === 'true'
-      ? {
-          script: [
-            {
-              src: 'https://polyfill.io/v3/polyfill.min.js?features=EventSource'
-            }
-          ]
-        }
-      : {})
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/styles/settings.css'],
-  /*
-   ** Plugins to load before mounting the App
-   */
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/axios',
-    '~/plugins/vxm',
     ENABLE_MOCK === 'true' ? '~/plugins/mock' : '~/plugins/api'
   ],
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // Doc: https://github.com/nuxt-community/stylelint-module
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // Doc: https://typescript.nuxtjs.org/
-    ['@nuxt/typescript-build', { typeCheck: { eslint: true } }]
   ],
-  /*
-   ** Nuxt.js modules
-   */
+
+  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/dotenv'
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: { baseURL: BASE_URL },
-  /*
-   ** Build configuration
-   */
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    /*
-     ** Customize PostCSS Loader plugins
-     */
-    postcss: {
-      preset: {
-        // Caution: https://github.com/postcss/autoprefixer#beware-of-enabling-autoplacement-in-old-projects
-        autoprefixer: SUPPORT_IE === 'true' ? { grid: 'autoplace' } : {}
-      }
-    }
-    /*
-     ** You can extend webpack config here
-     */
-    // extend(config, ctx) {},
   }
 }
 

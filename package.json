@@ -1,92 +1,44 @@
 {
   "name": "nuxt-ts",
   "version": "0.1.0",
-  "description": "My swell Nuxt.js project",
-  "author": "m-mitsuhide",
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:client": "nuxt-ts",
+    "dev:nuxt": "nuxt",
     "dev:api": "aspida --watch",
     "dev:mock": "aspida-mock --watch",
-    "generate": "run-p build:* && nuxt-ts generate",
+    "build": "run-p build:* && nuxt build",
+    "generate": "run-p build:* && nuxt generate",
     "build:api": "aspida --build",
     "build:mock": "aspida-mock --build",
-    "lint": "npm run lint:script && npm run lint:style",
-    "lint:script": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{*(s)css,vue}\"",
-    "lint:fix": "npm run lint:script -- --fix && npm run lint:style -- --fix",
+    "lint": "yarn lint:js && yarn lint:style",
+    "lint:js": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:style -- --fix",
     "typecheck": "run-p build:* && tsc --noEmit"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "extends": [
-      "@nuxtjs/eslint-config-typescript",
-      "plugin:nuxt/recommended",
-      "plugin:prettier/recommended",
-      "prettier",
-      "prettier/@typescript-eslint",
-      "prettier/standard",
-      "prettier/unicorn",
-      "prettier/vue"
-    ],
-    "globals": {
-      "$nuxt": "readonly"
-    },
-    "rules": {
-      "prefer-template": "error"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "prettier": {
-    "semi": false,
-    "arrowParens": "always",
-    "trailingComma": "none",
-    "singleQuote": true
-  },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-twbs-bootstrap/scss",
-      "stylelint-config-prettier"
-    ]
-  },
   "dependencies": {
-    "@aspida/axios": "^0.6.0",
-    "@nuxt/typescript-runtime": "^0.4.7",
-    "@nuxtjs/axios": "^5.10.3",
-    "nuxt": "^2.12.2",
-    "nuxt-property-decorator": "^2.7.2"
+    "@aspida/fetch": "^1.7.1",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
-    "@nuxt/types": "^0.7.7",
-    "@nuxt/typescript-build": "^1.0.3",
+    "@babel/eslint-parser": "^7.14.7",
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/eslint-config-typescript": "^2.0.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",
-    "aspida-mock": "^0.5.2",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
+    "aspida-mock": "^0.8.2",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.12.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.5",
-    "stylelint": "^13.5.0",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-twbs-bootstrap": "^2.0.3",
-    "typescript": "^3.9.7"
+    "stylelint-config-standard": "^22.0.0"
   }
 }
