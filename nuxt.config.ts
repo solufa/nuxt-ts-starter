@@ -55,6 +55,7 @@ const config: NuxtConfig = {
   ],
 
   vite: {
+    server: { fs: { strict: false } },
     vue: {
       jsx: true,
       jsxOptions: { compositionAPI: true },
