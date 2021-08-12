@@ -34,7 +34,10 @@ const config: NuxtConfig = {
   css: ['~/assets/styles/settings.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [ENABLE_MOCK === 'true' ? '~/plugins/mock' : '~/plugins/api'],
+  plugins: [
+    '~/plugins/$path',
+    ENABLE_MOCK === 'true' ? '~/plugins/mock' : '~/plugins/api',
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

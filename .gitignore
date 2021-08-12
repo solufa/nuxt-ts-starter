@@ -90,5 +90,5 @@ sw.*
 *.swp
 
 ### Misc
-api/$*.ts
+$*.ts
 *.module.css.d.ts
