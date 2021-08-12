@@ -1,20 +1,25 @@
-import { defineComponent, onMounted, useContext } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  useContext,
+} from '@nuxtjs/composition-api'
+import type { User } from '~/api/users'
 import { Tutorial } from '~/components/Tutorial'
 import styles from './styles.module.css'
 
 export default defineComponent({
   setup() {
     const ctx = useContext()
-    console.log(ctx.$pagesPath.$url())
+    const users = ref<User[]>()
 
     onMounted(async () => {
-      const res = await ctx.$api.users.$get()
-      console.log(res)
+      users.value = await ctx.$api.users.$get()
     })
 
     return () => (
       <div class={styles.sampleFont}>
-        <Tutorial />
+        {users.value && <Tutorial users={users.value} />}
       </div>
     )
   },

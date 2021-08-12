@@ -1,6 +1,13 @@
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import type { User } from '~/api/users'
 
 export const Tutorial = defineComponent({
+  props: {
+    users: {
+      type: Array as PropType<User[]>,
+      required: true,
+    },
+  },
   setup() {
     return () => (
       <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">

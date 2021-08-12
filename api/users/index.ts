@@ -3,12 +3,12 @@ import { mockMethods } from 'aspida-mock'
 export const users = [
   { firstname: 'Franklin', lastname: 'Potter' },
   { firstname: 'Hamaad', lastname: 'Collins' },
-  { firstname: 'Morris', lastname: 'Dejesus' }
+  { firstname: 'Morris', lastname: 'Dejesus' },
 ].map((user, id) => ({ id, ...user }))
 
 export type User = typeof users[0]
 
-export interface Methods {
+export type Methods = {
   get: {
     resBody: User[]
   }
@@ -25,9 +25,9 @@ export default mockMethods<Methods>({
     users.push({
       id: users.length,
       firstname: reqBody.firstname,
-      lastname: reqBody.lastname
+      lastname: reqBody.lastname,
     })
 
     return { status: 201 }
-  }
+  },
 })

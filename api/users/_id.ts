@@ -1,5 +1,5 @@
 import { mockMethods } from 'aspida-mock'
-import { users, User } from './index'
+import { User, users } from './index'
 
 export interface Methods {
   get: {
@@ -10,6 +10,6 @@ export interface Methods {
 export default mockMethods<Methods>({
   get: ({ values }) => ({
     status: 200,
-    resBody: users.filter((user) => user.id === values.id)[0]
-  })
+    resBody: users.filter((user) => user.id === values.id)[0],
+  }),
 })
