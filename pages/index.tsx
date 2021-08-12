@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, useContext } from '@nuxtjs/composition-api'
-import Tutorial from '~/components/Tutorial.vue'
+import { Tutorial } from '~/components/Tutorial'
 import styles from './styles.module.css'
 
 export default defineComponent({
