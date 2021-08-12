@@ -7,33 +7,32 @@
 `.env`
 
 ```
-ENABLE_MOCK=true
-SUPPORT_IE=false
+BASE_URL=https://example.com/v1
 ```
 
-``` bash
-$ npm install
+```bash
+$ yarn install
 
-$ npm run dev
+$ yarn dev
 ```
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
-$ npm install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn dev
 
 # generate static project
-$ npm run generate
+$ yarn generate
 
 # keep clean code
-$ npm run lint
+$ yarn lint
 
 # check the types
-$ npm run typecheck
+$ yarn typecheck
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

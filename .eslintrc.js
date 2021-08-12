@@ -2,15 +2,19 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended',
-    'prettier'
+    'prettier',
   ],
-  plugins: [
-  ],
-  // add your custom rules here
-  rules: {}
+  plugins: [],
+  rules: {
+    complexity: ['error', 5],
+    'max-depth': ['error', 1],
+    'max-nested-callbacks': ['error', 2],
+    'max-lines': ['error', 200],
+    'prefer-template': 'error',
+  },
 }

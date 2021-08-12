@@ -4,7 +4,8 @@ import 'dotenv/config'
 const {
   npm_package_name: TITLE,
   npm_package_description: DESCRIPTION,
-  ENABLE_MOCK,
+  NODE_ENV,
+  BASE_URL,
 } = process.env
 
 const config: NuxtConfig = {
@@ -30,13 +31,17 @@ const config: NuxtConfig = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  env: {
+    baseUrl: BASE_URL ?? '',
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/styles/settings.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/$path',
-    ENABLE_MOCK === 'true' ? '~/plugins/mock' : '~/plugins/api',
+    NODE_ENV === 'development' ? '~/plugins/mock' : '~/plugins/api',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
