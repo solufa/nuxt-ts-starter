@@ -1,8 +1,8 @@
 import {
   defineComponent,
-  onMounted,
   ref,
   useContext,
+  useFetch,
 } from '@nuxtjs/composition-api'
 import type { User } from '~/api/users'
 import { Tutorial } from '~/components/Tutorial'
@@ -13,7 +13,7 @@ export default defineComponent({
     const ctx = useContext()
     const users = ref<User[]>()
 
-    onMounted(async () => {
+    useFetch(async () => {
       users.value = await ctx.$api.users.$get()
     })
 
