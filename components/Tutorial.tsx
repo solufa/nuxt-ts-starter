@@ -1,5 +1,6 @@
-import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api'
 import type { User } from '~/api/users'
+import { NuxtLink } from './nuxt'
 
 export const Tutorial = defineComponent({
   props: {
@@ -9,6 +10,8 @@ export const Tutorial = defineComponent({
     },
   },
   setup() {
+    const { $pagesPath } = useContext()
+
     return () => (
       <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
         <link
@@ -59,9 +62,11 @@ export const Tutorial = defineComponent({
             </svg>
           </a>
           <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6">
-            <h2 class="text-2xl leading-7 font-semibold">
-              Welcome to your Nuxt Application
-            </h2>
+            <NuxtLink to={$pagesPath.$url()}>
+              <h2 class="text-2xl leading-7 font-semibold">
+                Welcome to your Nuxt Application
+              </h2>
+            </NuxtLink>
             <p class="mt-3 text-gray-600">
               We recommend you take a look at the{' '}
               <a
