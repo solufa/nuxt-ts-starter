@@ -8,6 +8,15 @@ declare module '@nuxt/types' {
   }
 }
 
-const plugin: Plugin = (_, inject) => inject('api', api(client()))
+const plugin: Plugin = (_, inject) =>
+  inject(
+    'api',
+    api(
+      client(fetch, {
+        baseURL: process.env.VITE_BASE_URL,
+        throwHttpErrors: true,
+      })
+    )
+  )
 
 export default plugin

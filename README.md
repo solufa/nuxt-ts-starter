@@ -7,7 +7,7 @@
 `.env`
 
 ```
-BASE_URL=https://example.com/v1
+VITE_BASE_URL=https://example.com/v1
 ```
 
 ```bash

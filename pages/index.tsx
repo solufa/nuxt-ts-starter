@@ -1,20 +1,21 @@
-import {
-  defineComponent,
-  ref,
-  useContext,
-  useFetch,
-} from '@nuxtjs/composition-api'
+import { defineComponent, useContext, useFetch } from '@nuxtjs/composition-api'
 import type { User } from '~/api/users'
 import { Tutorial } from '~/components/Tutorial'
-import styles from './styles.module.css'
+import { useErrHandler, useState } from '~/utils/hooks'
+import styles from './-styles.module.css'
 
 export default defineComponent({
   setup() {
     const ctx = useContext()
-    const users = ref<User[]>()
+    const [users, setUsers] = useState<User[]>()
+    const errHandler = useErrHandler()
 
     useFetch(async () => {
-      users.value = await ctx.$api.users.$get()
+      try {
+        setUsers(await ctx.$api.users.$get())
+      } catch (e) {
+        errHandler(e)
+      }
     })
 
     return () => (

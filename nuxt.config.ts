@@ -1,11 +1,10 @@
 import { NuxtConfig } from '@nuxt/types'
-import 'dotenv/config'
 
 const {
   npm_package_name: TITLE,
   npm_package_description: DESCRIPTION,
   NODE_ENV,
-  BASE_URL,
+  VITE_BASE_URL,
 } = process.env
 
 const config: NuxtConfig = {
@@ -32,7 +31,7 @@ const config: NuxtConfig = {
   },
 
   env: {
-    baseUrl: BASE_URL ?? '',
+    VITE_BASE_URL: VITE_BASE_URL ?? '',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
