@@ -1,5 +1,5 @@
 import client from '@aspida/fetch'
-import type { Plugin } from '@nuxt/types'
+import { defineNuxtPlugin } from '@nuxtjs/composition-api'
 import api, { ApiInstance } from '~/api/$api'
 
 declare module '@nuxt/types' {
@@ -8,7 +8,7 @@ declare module '@nuxt/types' {
   }
 }
 
-const plugin: Plugin = (_, inject) =>
+export default defineNuxtPlugin((_, inject) =>
   inject(
     'api',
     api(
@@ -18,5 +18,4 @@ const plugin: Plugin = (_, inject) =>
       })
     )
   )
-
-export default plugin
+)

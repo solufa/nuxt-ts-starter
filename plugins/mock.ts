@@ -1,8 +1,7 @@
 import client from '@aspida/fetch'
-import type { Plugin } from '@nuxt/types'
+import { defineNuxtPlugin } from '@nuxtjs/composition-api'
 import mock from '~/api/$mock'
 
-const plugin: Plugin = (_, inject) =>
-  inject('api', mock(client(), { log: true }))
-
-export default plugin
+export default defineNuxtPlugin((_, inject) =>
+  inject('api', mock(client(), { log: true, delayMSec: 500 }))
+)

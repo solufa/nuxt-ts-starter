@@ -1,5 +1,5 @@
 import { defineComponent, useContext, useFetch } from '@nuxtjs/composition-api'
-import { Tutorial } from '~/components/Tutorial'
+import { Tutorial } from '~/components/pages/index/Tutorial'
 import type { ApiUser } from '~/types'
 import { useErrHandler, useState } from '~/utils/hooks'
 import styles from './-styles.module.css'
