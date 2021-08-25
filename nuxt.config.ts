@@ -34,6 +34,8 @@ const config: NuxtConfig = {
     VITE_BASE_URL: VITE_BASE_URL ?? '',
   },
 
+  loading: false,
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/styles/settings.css'],
 
