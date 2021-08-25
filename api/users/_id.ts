@@ -1,9 +1,10 @@
 import { mockMethods } from 'aspida-mock'
-import { User, users } from './index'
+import type { ApiUser } from '~/types'
+import { users } from '../@seeds'
 
 export interface Methods {
   get: {
-    resBody: User
+    resBody: ApiUser
   }
 }
 

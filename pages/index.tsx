@@ -1,13 +1,13 @@
 import { defineComponent, useContext, useFetch } from '@nuxtjs/composition-api'
-import type { User } from '~/api/users'
 import { Tutorial } from '~/components/Tutorial'
+import type { ApiUser } from '~/types'
 import { useErrHandler, useState } from '~/utils/hooks'
 import styles from './-styles.module.css'
 
 export default defineComponent({
   setup() {
     const ctx = useContext()
-    const [users, setUsers] = useState<User[]>()
+    const [users, setUsers] = useState<ApiUser[]>()
     const errHandler = useErrHandler()
 
     useFetch(async () => {

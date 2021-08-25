@@ -1,11 +1,11 @@
 import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api'
-import type { User } from '~/api/users'
+import type { ApiUser } from '~/types'
 import { NuxtLink } from './nuxt'
 
 export const Tutorial = defineComponent({
   props: {
     users: {
-      type: Array as PropType<User[]>,
+      type: Array as PropType<ApiUser[]>,
       required: true,
     },
   },

@@ -1,20 +1,14 @@
 import { mockMethods } from 'aspida-mock'
-
-export const users = [
-  { firstname: 'Franklin', lastname: 'Potter' },
-  { firstname: 'Hamaad', lastname: 'Collins' },
-  { firstname: 'Morris', lastname: 'Dejesus' },
-].map((user, id) => ({ id, ...user }))
-
-export type User = typeof users[0]
+import type { ApiUser, UserId } from '~/types'
+import { users } from '../@seeds'
 
 export type Methods = {
   get: {
-    resBody: User[]
+    resBody: ApiUser[]
   }
 
   post: {
-    reqBody: Omit<User, 'id'>
+    reqBody: Omit<ApiUser, 'id'>
   }
 }
 
@@ -23,7 +17,7 @@ export default mockMethods<Methods>({
 
   post: ({ reqBody }) => {
     users.push({
-      id: users.length,
+      id: users.length as UserId,
       firstname: reqBody.firstname,
       lastname: reqBody.lastname,
     })
