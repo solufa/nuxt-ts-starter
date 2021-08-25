@@ -1,16 +1,14 @@
-import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api'
+import { defineComponent, useContext } from '@nuxtjs/composition-api'
 import { Spacer } from '~/components/atoms'
 import { NuxtLink } from '~/components/nuxt'
 import type { ApiUser } from '~/types'
+import { getArrType } from '~/utils/props'
 
 export const Tutorial = defineComponent({
   props: {
-    users: {
-      type: Array as PropType<ApiUser[]>,
-      required: true,
-    },
+    users: getArrType<ApiUser>(),
   },
-  setup() {
+  setup(props) {
     const { $pagesPath } = useContext()
 
     return () => (
@@ -66,7 +64,7 @@ export const Tutorial = defineComponent({
           <div class="bg-white overflow-hidden shadow sm:rounded-lg p-6">
             <NuxtLink to={$pagesPath.$url()}>
               <h2 class="text-2xl leading-7 font-semibold">
-                Welcome to your Nuxt Application
+                Welcome to {props.users[0].lastname} Nuxt Application
               </h2>
             </NuxtLink>
             <Spacer axis="y" size={12} />
@@ -86,11 +84,11 @@ export const Tutorial = defineComponent({
             <p class="mt-4 pt-4 text-gray-800 border-t border-dashed">
               To get started, remove{' '}
               <code class="bg-gray-100 text-sm p-1 rounded border">
-                components/Tutorial.vue
+                components/pages/index/Tutorial.tsx
               </code>{' '}
               and start coding in{' '}
               <code class="bg-gray-100 text-sm p-1 rounded border">
-                pages/index.vue
+                pages/index.tsx
               </code>
               . Have fun!
             </p>
