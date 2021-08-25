@@ -1,9 +1,7 @@
 import { useContext } from '@nuxtjs/composition-api'
 
-export const useErrHandler = (): ((e: Error) => void) => {
+export const useErrHandler = () => {
   const ctx = useContext()
 
-  return (e) => {
-    ctx.error(e)
-  }
+  return (e: Error) => ctx.error(e)
 }

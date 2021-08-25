@@ -7,9 +7,7 @@ function useState<T>(): [
 function useState<T>(
   initialState: T
 ): [ComputedRef<UnwrapRef<T>>, (value: T) => void]
-function useState<T>(
-  initialState?: T
-): [ComputedRef<UnwrapRef<T | undefined>>, (value: T) => void] {
+function useState<T>(initialState?: T) {
   const state = ref(initialState)
   const setState = (value: T) => {
     state.value = value as UnwrapRef<T>

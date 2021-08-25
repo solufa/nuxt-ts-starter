@@ -18,5 +18,6 @@ module.exports = {
     'max-lines': ['error', 200],
     'prefer-template': 'error',
     'import/order': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 }
