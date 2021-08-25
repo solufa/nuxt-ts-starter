@@ -18,6 +18,7 @@ module.exports = {
     'max-lines': ['error', 200],
     'prefer-template': 'error',
     'import/order': 'off',
+    'vue/one-component-per-file': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 }

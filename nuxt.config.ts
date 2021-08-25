@@ -67,6 +67,7 @@ const config: NuxtConfig = {
   modules: [
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    'portal-vue/nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
