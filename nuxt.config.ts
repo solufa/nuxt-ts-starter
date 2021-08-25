@@ -73,7 +73,7 @@ const config: NuxtConfig = {
     loaders: {
       css: {
         modules: {
-          // @ts-expect-error
+          // @ts-expect-error function type is not defined
           mode: (filePath: string) =>
             /\.module\.css$/.test(filePath) ? 'local' : 'global',
         },

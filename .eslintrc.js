@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
   plugins: [],
@@ -16,5 +17,6 @@ module.exports = {
     'max-nested-callbacks': ['error', 2],
     'max-lines': ['error', 200],
     'prefer-template': 'error',
+    'import/order': 'off',
   },
 }
