@@ -1,5 +1,12 @@
 import { defineComponent, useContext, useFetch } from '@nuxtjs/composition-api'
-import { Loading } from '~/components/atoms'
+import {
+  Button,
+  Loading,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+} from '~/components/atoms'
 import { Tutorial } from '~/components/pages/index/Tutorial'
 import type { ApiUser } from '~/types'
 import { useErrHandler, useState } from '~/utils/hooks'
@@ -8,6 +15,7 @@ import styles from './-styles.module.css'
 export default defineComponent({
   setup() {
     const ctx = useContext()
+    const [openedModal, setOpenedModal] = useState(false)
     const [users, setUsers] = useState<ApiUser[]>([])
     const errHandler = useErrHandler()
 
@@ -25,6 +33,18 @@ export default defineComponent({
       ) : (
         <div class={styles.sampleFont}>
           <Tutorial users={users.value} />
+          <div class={styles.openingButton}>
+            <Button click={() => setOpenedModal(true)}>Open modal</Button>
+          </div>
+          <Modal opened={openedModal.value} updateOpened={setOpenedModal}>
+            <ModalHeader title="Sample modal" />
+            <ModalBody>
+              <div class={styles.modalContent}>Large content</div>
+            </ModalBody>
+            <ModalFooter>
+              <Button click={() => setOpenedModal(false)}>Close</Button>
+            </ModalFooter>
+          </Modal>
         </div>
       )
   },

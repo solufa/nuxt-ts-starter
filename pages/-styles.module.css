@@ -1,3 +1,15 @@
 .sampleFont {
   color: #00f;
 }
+
+.openingButton {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+
+.modalContent {
+  width: 800px;
+  height: 600px;
+  padding: 40px;
+}

@@ -1,3 +1,5 @@
+export * from './Button'
 export * from './Loading'
+export * from './Modal'
 export * from './NuxtLogo'
 export * from './Spacer'

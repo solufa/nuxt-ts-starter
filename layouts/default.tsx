@@ -1,6 +1,6 @@
 import { defineComponent } from '@nuxtjs/composition-api'
-import { loadingPortalName } from '~/components/atoms'
 import { PortalTarget } from '~/components/nuxt'
+import { LOADING_PORTAL, MODAL_PORTAL } from '~/utils/constants'
 
 export default defineComponent({
   middleware: 'sample',
@@ -8,7 +8,8 @@ export default defineComponent({
     return () => (
       <div>
         <nuxt />
-        <PortalTarget name={loadingPortalName} />
+        <PortalTarget name={MODAL_PORTAL} />
+        <PortalTarget name={LOADING_PORTAL} />
       </div>
     )
   },

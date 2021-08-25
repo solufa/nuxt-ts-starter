@@ -27,7 +27,7 @@ export const getOptionalArrType = <T>() => ({
 })
 
 export const getFnType = <T>() => ({
-  type: Function as PropType<PropType<(arg: T) => void>>,
+  type: Function as PropType<(arg: T) => void>,
   required: true as const,
 })
 
