@@ -1,4 +1,5 @@
 import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api'
+import { Spacer } from '~/components/atoms'
 import { NuxtLink } from '~/components/nuxt'
 import type { ApiUser } from '~/types'
 
@@ -61,13 +62,15 @@ export const Tutorial = defineComponent({
               />
             </svg>
           </a>
-          <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg p-6">
+          <Spacer axis="y" size={32} />
+          <div class="bg-white overflow-hidden shadow sm:rounded-lg p-6">
             <NuxtLink to={$pagesPath.$url()}>
               <h2 class="text-2xl leading-7 font-semibold">
                 Welcome to your Nuxt Application
               </h2>
             </NuxtLink>
-            <p class="mt-3 text-gray-600">
+            <Spacer axis="y" size={12} />
+            <p class="text-gray-600">
               We recommend you take a look at the{' '}
               <a
                 href="https://nuxtjs.org"
