@@ -1,5 +1,5 @@
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { getVoidFnType } from '~/utils/props'
+import { voidFnType } from '~/utils/props'
 import styles from './styles.module.css'
 
 export const Button = defineComponent({
@@ -9,7 +9,7 @@ export const Button = defineComponent({
       required: false,
       default: 'middle',
     },
-    click: getVoidFnType(),
+    click: voidFnType,
   },
   setup(props, { slots }) {
     return () => (
