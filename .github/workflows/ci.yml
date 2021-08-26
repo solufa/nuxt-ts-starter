@@ -16,10 +16,14 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest]
         node: [14]
 
     steps:
+      - name: Disable autocrlf
+        run: git config --global core.autocrlf false
+        if: matrix.os == 'windows-latest'
+
       - name: Checkout 🛎
         uses: actions/checkout@master
 
