@@ -73,13 +73,7 @@ const config: NuxtConfig = {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     loaders: {
-      css: {
-        modules: {
-          // @ts-expect-error function type is not defined
-          mode: (filePath: string) =>
-            /\.module\.css$/.test(filePath) ? 'local' : 'global',
-        },
-      },
+      css: { modules: true },
     },
   },
 }
