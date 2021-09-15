@@ -6,7 +6,6 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "vetur.experimental.templateInterpolationService": true,
   "files.eol": "\n",
   "editor.tabSize": 2
 }

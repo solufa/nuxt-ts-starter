@@ -19,9 +19,9 @@
     "build:components-css": "tcm components",
     "lint": "yarn lint:js && yarn lint:prettier && yarn lint:style",
     "lint:js": "eslint --ext .ts,.tsx,.js --ignore-path .gitignore .",
-    "lint:prettier": "prettier --ignore-path .gitignore --check \"./**/*.{ts,tsx,js}[!.d.ts]\"",
+    "lint:prettier": "prettier --ignore-path .gitignore --check \"./**/*.{ts,tsx,js}\"",
     "lint:style": "stylelint \"**/*.css\" --ignore-path .gitignore",
-    "lint:fix": "npm run lint:js -- --fix && prettier --ignore-path .gitignore --write \"./**/*.{ts,tsx,js}[!.d.ts]\" &&  npm run lint:style -- --fix",
+    "lint:fix": "npm run lint:js -- --fix && prettier --ignore-path .gitignore --write \"./**/*.{ts,tsx,js}\" &&  npm run lint:style -- --fix",
     "typecheck": "run-p build:* && tsc --noEmit"
   },
   "dependencies": {

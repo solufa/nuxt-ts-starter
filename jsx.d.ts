@@ -26,12 +26,12 @@
 //                 Kanitkorn Sujautra <https://github.com/lukyth>
 //                 Sebastian Silbermann <https://github.com/eps1lon>
 /* eslint-disable */
-import { VNode } from 'vue'
-import * as CSS from 'csstype'
-
+// prettier-ignore
 // use namespace import to avoid collision with generated types which use
 // named imports.
 import * as RuntimeCore from '@nuxtjs/composition-api'
+import * as CSS from 'csstype'
+import { VNode } from 'vue'
 
 export interface CSSProperties extends CSS.Properties<string | number> {
   /**
