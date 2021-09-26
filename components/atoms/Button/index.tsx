@@ -1,4 +1,5 @@
-import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import type { PropType } from '@nuxtjs/composition-api'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { voidFnType } from '~/utils/props'
 import styles from './styles.module.css'
 

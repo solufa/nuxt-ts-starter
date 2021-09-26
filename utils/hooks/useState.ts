@@ -1,4 +1,5 @@
-import { computed, ComputedRef, ref, UnwrapRef } from '@nuxtjs/composition-api'
+import type { ComputedRef, UnwrapRef } from '@nuxtjs/composition-api'
+import { computed, ref } from '@nuxtjs/composition-api'
 
 function useState<T>(): [
   ComputedRef<UnwrapRef<T | undefined>>,

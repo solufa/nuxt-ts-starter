@@ -1,4 +1,5 @@
-import { computed, defineComponent, PropType } from '@nuxtjs/composition-api'
+import type { PropType } from '@nuxtjs/composition-api'
+import { computed, defineComponent } from '@nuxtjs/composition-api'
 
 export const Spacer = defineComponent({
   props: {

@@ -1,6 +1,7 @@
 import client from '@aspida/fetch'
 import { defineNuxtPlugin } from '@nuxtjs/composition-api'
-import api, { ApiInstance } from '~/api/$api'
+import type { ApiInstance } from '~/api/$api'
+import api from '~/api/$api'
 
 declare module '@nuxt/types' {
   interface Context {

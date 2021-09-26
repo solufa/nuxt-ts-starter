@@ -20,5 +20,6 @@ module.exports = {
     'import/order': 'off',
     'vue/one-component-per-file': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
 }
