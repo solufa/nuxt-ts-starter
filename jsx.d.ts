@@ -294,15 +294,7 @@ export interface HTMLAttributes extends AriaAttributes, EventHandlers<Events> {
    * Hints at the type of data that might be entered by the user while editing the element or its contents
    * @see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute
    */
-  inputmode?:
-    | 'none'
-    | 'text'
-    | 'tel'
-    | 'url'
-    | 'email'
-    | 'numeric'
-    | 'decimal'
-    | 'search'
+  inputmode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'
   /**
    * Specify that a standard HTML element should behave like a defined custom built-in element
    * @see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is
@@ -1315,9 +1307,7 @@ type ReservedProps = {
 type ElementAttrs<T> = T & ReservedProps
 
 type NativeElements = {
-  [K in keyof IntrinsicElementAttributes]: ElementAttrs<
-    IntrinsicElementAttributes[K]
-  >
+  [K in keyof IntrinsicElementAttributes]: ElementAttrs<IntrinsicElementAttributes[K]>
 }
 
 declare global {

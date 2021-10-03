@@ -1,12 +1,5 @@
 import { defineComponent, useContext, useFetch } from '@nuxtjs/composition-api'
-import {
-  Button,
-  Loading,
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-} from '~/components/atoms'
+import { Button, Loading, Modal, ModalBody, ModalFooter, ModalHeader } from '~/components/atoms'
 import { Tutorial } from '~/components/pages/index/Tutorial'
 import type { ApiUser } from '~/types'
 import { useErrHandler, useState } from '~/utils/hooks'

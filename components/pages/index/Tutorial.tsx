@@ -18,11 +18,7 @@ export const Tutorial = defineComponent({
           rel="stylesheet"
         />
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-          <a
-            class="flex justify-center pt-8 sm:pt-0"
-            href="https://nuxtjs.org"
-            target="_blank"
-          >
+          <a class="flex justify-center pt-8 sm:pt-0" href="https://nuxtjs.org" target="_blank">
             <svg
               width="218"
               height="45"
@@ -70,15 +66,10 @@ export const Tutorial = defineComponent({
             <Spacer axis="y" size={12} />
             <p class="text-gray-600">
               We recommend you take a look at the{' '}
-              <a
-                href="https://nuxtjs.org"
-                target="_blank"
-                class="text-green-500 hover:underline"
-              >
+              <a href="https://nuxtjs.org" target="_blank" class="text-green-500 hover:underline">
                 Nuxt documentation
               </a>
-              , whether you are new or have previous experience with the
-              framework.
+              , whether you are new or have previous experience with the framework.
               <br />
             </p>
             <p class="mt-4 pt-4 text-gray-800 border-t border-dashed">
@@ -87,10 +78,7 @@ export const Tutorial = defineComponent({
                 components/pages/index/Tutorial.tsx
               </code>{' '}
               and start coding in{' '}
-              <code class="bg-gray-100 text-sm p-1 rounded border">
-                pages/index.tsx
-              </code>
-              . Have fun!
+              <code class="bg-gray-100 text-sm p-1 rounded border">pages/index.tsx</code>. Have fun!
             </p>
           </div>
           <div class="flex justify-center pt-4 space-x-2">
